@@ -67,11 +67,11 @@ let db;
       ((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
     `);
 
-    await db.execute(`
-      INSERT INTO WalkRatings (rating, comments)
-      VALUES
-      ()
-    `);
+    // await db.execute(`
+    //   INSERT INTO WalkRatings (rating, comments)
+    //   VALUES
+    //   ()
+    // `);
 
 
   } catch (err) {
