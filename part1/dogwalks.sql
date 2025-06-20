@@ -59,5 +59,5 @@ VALUES
 ("alice123", "alice@example.com", "hashed123", "owner")
 ("bobwalker", "bob@example.com", "hashed456", "walker")
 ("carol123", "carol@example.com", "hashed789", "owner")
-("alice123", "alice@example.com", "hashed123", "owner")
-("alice123", "alice@example.com", "hashed123", "owner")
+("adamowner", "adam@example.com", "hashed123", "owner")
+("billwalker", "alice@example.com", "hashed123", "owner")
