@@ -110,6 +110,7 @@
         async handleLogout(){
           localStorage.removeItem("role");
           localStorage.removeItem("loggedIn");
+          localStorage.removeItem("user_id");
           window.location.href = "/";
         }
       }
