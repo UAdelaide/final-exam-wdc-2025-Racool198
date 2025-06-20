@@ -28,18 +28,17 @@ router.get('/api/dogs', async function(req, res, next) {
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
   try {
-
-  const rows = await db.execute(`SELECT
-    request_id,
-    (SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,
-    requested_time,
-    duration_minutes,
-    location,
-    (SELECT username FROM Users WHERE Users.user_id = (SELECT owner_id FROM Dogs WHERE WalkRequests.dog_id = Dogs.dog_id)) AS owner_username
-    FROM WalkRequests
-    WHERE status = "open";`);
-  res.json(rows[0]);
-    } catch (err){
+    const rows = await db.execute(`SELECT
+      request_id,
+      (SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,
+      requested_time,
+      duration_minutes,
+      location,
+      (SELECT username FROM Users WHERE Users.user_id = (SELECT owner_id FROM Dogs WHERE WalkRequests.dog_id = Dogs.dog_id)) AS owner_username
+      FROM WalkRequests
+      WHERE status = "open";`);
+    res.json(rows[0]);
+  } catch (err){
     res.status(404);
     res.send("Error Occured");
   }
