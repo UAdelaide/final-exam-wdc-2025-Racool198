@@ -90,8 +90,12 @@
       methods: {
         async getDogPhotos(count) {
           for (let index = 0; index < count; index++) {
-            this.dogPhotos[index] =
-
+            fetch("https://dog.ceo/api/breeds/image/random")
+            .then(async (rsp) => {
+                rsp = await rsp.json()
+                // return rsp["message"]
+                this.dogPhotos[index] = rsp["message"]
+            })
           }
 
         },
