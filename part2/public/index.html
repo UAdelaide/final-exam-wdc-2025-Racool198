@@ -51,7 +51,9 @@
       },
       methods: {
         handleLogin(){
-          fetch("/api/users/login")
+          fetch("/api/users/login", {
+            method: "POST"
+          })
         }
       }
     }).mount('#app');
