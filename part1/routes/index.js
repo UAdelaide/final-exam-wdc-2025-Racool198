@@ -22,7 +22,7 @@ router.get('/api/dogs', async function(req, res, next) {
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
-  const rows = await db.execute("SELECT request_id,(SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,requested_time,duration_minutes,location,SELECT username FROM Users WHERE Users.user_id = WalkRequests.owner_id) AS owner_username FROM WalkRequests;");
+  const rows = await db.execute("SELECT request_id,(SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,requested_time,duration_minutes,location,(SELECT username FROM Users WHERE Users.user_id = WalkRequests.owner_id) AS owner_username FROM WalkRequests;");
   res.json(rows[0]);
 });
 
