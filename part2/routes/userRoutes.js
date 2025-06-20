@@ -36,10 +36,11 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/myDogs', (req, res) => {
-  if (!req.session.user_id) {
-    return res.status(401).json({ error: 'Not logged in' });
+  try {
+    res.json(req.session.user_id);
+
+  } catch (err) {
   }
-  res.json(req.session.user_id);
 });
 
 // just deletes the session data
