@@ -29,7 +29,17 @@ let db;
 
 (async () => {
   try {
-    console.log("test")
+    const connection = await mysql.createConnection({
+          host: 'localhost',
+          user: 'root',
+          password: '' // Set your MySQL root password
+    });
+
+
+
+
+
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
