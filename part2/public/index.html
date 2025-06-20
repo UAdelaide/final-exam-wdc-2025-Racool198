@@ -68,9 +68,8 @@
       // added methods to the vue CreateApp, the handleLogin method fetches the /api/users/login route and then redirects to the correct dashboard after setting localstorage values loggedIn and role.
       methods: {
         async handleLogin(){
-          var response;
           try{
-            response = await fetch("/api/users/login", {
+            await fetch("/api/users/login", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -88,8 +87,6 @@
           } catch (err){
 
           }
-
-          console.log(response)
 
         }
       }
