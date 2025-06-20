@@ -157,7 +157,8 @@
         },
         async getDogs(){
           temp = await fetch("/api/users/myDogs")
-          console.log(await temp.json());
+          // console.log(await temp.json());
+          this.dogs = await temp.json();
         }
 
       },
