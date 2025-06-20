@@ -55,26 +55,27 @@ CREATE TABLE WalkRatings (
 );
 
 
--- INSERT INTO Users (username, email, password_hash, role)
--- VALUES
--- ("alice123", "alice@example.com", "hashed123", "owner"),
--- ("bobwalker", "bob@example.com", "hashed456", "walker"),
--- ("carol123", "carol@example.com", "hashed789", "owner"),
--- ("adamowner", "adam@example.com", "adam123", "owner"),
--- ("billwalker", "bill@example.com", "bill321", "walker");
+INSERT INTO Users (username, email, password_hash, role)
+VALUES
+("alice123", "alice@example.com", "hashed123", "owner"),
+("bobwalker", "bob@example.com", "hashed456", "walker"),
+("carol123", "carol@example.com", "hashed789", "owner"),
+("adamowner", "adam@example.com", "adam123", "owner"),
+("billwalker", "bill@example.com", "bill321", "walker");
 
--- INSERT INTO Dogs (owner_id, name, size)
--- VALUES
--- ((SELECT user_id FROM Users WHERE username = "alice123"),"Max", "medium"),
--- ((SELECT user_id FROM Users WHERE username = "carol123"),"Bella", "small"),
--- ((SELECT user_id FROM Users WHERE username = "adamowner"),"Jake", "medium"),
--- ((SELECT user_id FROM Users WHERE username = "alice123"),"Finn", "medium"),
--- ((SELECT user_id FROM Users WHERE username = "carol123"),"Cat", "small");
+INSERT INTO Dogs (owner_id, name, size)
+VALUES
+((SELECT user_id FROM Users WHERE username = "alice123"),"Max", "medium"),
+((SELECT user_id FROM Users WHERE username = "carol123"),"Bella", "small"),
+((SELECT user_id FROM Users WHERE username = "adamowner"),"Jake", "medium"),
+((SELECT user_id FROM Users WHERE username = "alice123"),"Finn", "medium"),
+((SELECT user_id FROM Users WHERE username = "carol123"),"Cat", "small");
 
--- INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
--- VALUES
--- ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", "30", "Parklands", "open"),
--- ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", "45", "Beachside Ave", "accepted"),
--- ((SELECT dog_id FROM Dogs WHERE name = "Jake"), "2025-06-9 08:00:00", "30", "Adelaide", "completed"),
--- ((SELECT dog_id FROM Dogs WHERE name = "Finn"), "2025-06-8 08:00:00", "12", "Klemzig", "completed"),
--- ((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+VALUES
+((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", "30", "Parklands", "open"),
+((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", "45", "Beachside Ave", "accepted"),
+((SELECT dog_id FROM Dogs WHERE name = "Jake"), "2025-06-9 08:00:00", "30", "Adelaide", "completed"),
+((SELECT dog_id FROM Dogs WHERE name = "Finn"), "2025-06-8 08:00:00", "12", "Klemzig", "completed"),
+((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
+
