@@ -54,7 +54,8 @@
           fetch("/api/users/login", {
             method: "POST",
             body: {
-              email
+              username: username,
+              password: password
             }
           })
         }
