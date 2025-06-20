@@ -36,7 +36,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 
 router.get('/api/walkers/summary', async function(req, res, next) {
   const rows = await db.execute(`SELECT
-    owner_id AS walker,
+    (SELECT username FROM Users WHERE Users.user_id = ),
     `);
   res.json(rows[0]);
 });
