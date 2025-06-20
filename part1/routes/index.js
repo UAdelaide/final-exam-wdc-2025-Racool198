@@ -27,6 +27,8 @@ router.get('/api/dogs', async function(req, res, next) {
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
+  try {
+
   const rows = await db.execute(`SELECT
     request_id,
     (SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,
@@ -37,31 +39,39 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
     FROM WalkRequests
     WHERE status = "open";`);
   res.json(rows[0]);
+    } catch (err){
+    res.status(404);
+    res.send("Error Occured");
+  }
 });
 
 router.get('/api/walkers/summary', async function(req, res, next) {
-  var rows = await db.execute(`
-    SELECT
-    u.username AS walker_username,
-    COUNT(wr.rating) AS total_ratings,
-    AVG(wr.rating) AS average_rating,
-    COUNT(
-      CASE
-        WHEN (
-          SELECT status
-          FROM WalkRequests
-          WHERE request_id = wr.request_id
-        ) = "completed" THEN wr.request_id
-        ELSE NULL
-      END
-    ) AS completed_walks
-    FROM Users u
-    JOIN WalkRatings wr ON u.user_id = wr.walker_id
-    WHERE u.role = "walker"
-    GROUP BY u.user_id, u.username
-    ;`);
-  res.json(rows[0]);
-
+  try {
+    var rows = await db.execute(`
+      SELECT
+      u.username AS walker_username,
+      COUNT(wr.rating) AS total_ratings,
+      AVG(wr.rating) AS average_rating,
+      COUNT(
+        CASE
+          WHEN (
+            SELECT status
+            FROM WalkRequests
+            WHERE request_id = wr.request_id
+          ) = "completed" THEN wr.request_id
+          ELSE NULL
+        END
+      ) AS completed_walks
+      FROM Users u
+      JOIN WalkRatings wr ON u.user_id = wr.walker_id
+      WHERE u.role = "walker"
+      GROUP BY u.user_id, u.username
+      ;`);
+    res.json(rows[0]);
+  } catch (err){
+    res.status(404);
+    res.send("Error Occured");
+  }
 });
 
 
