@@ -153,7 +153,8 @@
           window.location.href = "/";
         },
         async getDogs(){
-          dogs = fetch("/api/users/myDogs")
+          temp = await fetch("/api/users/myDogs")
+          console.log(temp);
         }
 
       }
