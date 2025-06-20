@@ -82,5 +82,5 @@ VALUES
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
 VALUES
 (
-    (SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "reallocation", "open"
+    (S)
 );
