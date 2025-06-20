@@ -27,7 +27,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
     requested_time,
     duration_minutes,
     location,
-    (SELECT username FROM Users WHERE WalkRequests.) AS owner_username
+    (SELECT username FROM Users WHERE WalkRequests.dog_id = Dogs.dog_id) AS owner_username
     FROM WalkRequests;`);
   res.json(rows[0]);
 });
