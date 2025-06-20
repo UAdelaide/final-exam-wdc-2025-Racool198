@@ -17,8 +17,13 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', async function(req, res, next) {
-  const rows = await db.execute("SELECT name AS dog_name,size,(SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id) AS owner_username FROM Dogs;");
-  res.json(rows[0]);
+  try {
+    const rows = await db.execute("SELECT name AS dog_name,size,(SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id) AS owner_username FROM Dogs;");
+    res.json(rows[0]);
+  } catch {
+    return 
+  }
+
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
