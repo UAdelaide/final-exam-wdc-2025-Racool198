@@ -53,6 +53,7 @@ router.post('/login', async (req, res) => {
     }
 
     if (rows[0]["role"] === "owner") {
+      window.location.href = "/owner-dashboard.html";
       res.redirect("/owner-dashboard.html");
     } else if (rows[0]["role"] === "walker") {
       res.redirect("/walker-dashboard.html");
