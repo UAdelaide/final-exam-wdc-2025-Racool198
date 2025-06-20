@@ -154,7 +154,9 @@
           localStorage.removeItem("user_id");
           window.location.href = "/";
         },
-        async get
+        async getDogs(){
+          user_id = localStorage.getItem("user_id");
+        }
 
       }
     }).mount('#app');
