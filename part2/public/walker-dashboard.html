@@ -48,7 +48,8 @@
   <script>
 
     document.addEventListener("DOMContentLoaded", async ()=>{
-      await fetch("/api/users/me");
+      rsp = await fetch("/api/users/me");
+      console.log(rsp)
     })
 
 
