@@ -51,7 +51,7 @@
       },
       methods: {
         handleLogin(){
-          fetch("/api/users/login", {
+          var role = fetch("/api/users/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -63,8 +63,10 @@
           })
           .then(rsp => rsp.json())
           .then(rsp => {
-            console.log(rsp["user"]["role"])
+            return (rsp["user"]["role"])
           })
+
+          
         }
       }
     }).mount('#app');
