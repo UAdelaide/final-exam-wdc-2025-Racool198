@@ -39,8 +39,7 @@ router.get('/api/walkers/summary', async function(req, res, next) {
     SELECT username
     FROM Users
     WHERE Users.role = "walker"
-    S walker_username
-    FROM Users;`);
+    AS walker_username`);
   res.json(rows[0]);
 });
 
