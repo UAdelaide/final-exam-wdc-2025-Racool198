@@ -107,9 +107,9 @@ router.post('/login', async (req, res) => {
     req.session.user_id = rows[0].user_id;
 
     if (rows[0].role === "owner") {
-      res.json({ message: 'Login successful', redirect: "/owner-dashboard.html"});
+      res.json({ message: 'Login successful', redirect: "/owner-dashboard.html" });
     } else if (rows[0].role === "walker") {
-      res.json({ message: 'Login successful', redirect: "/walker-dashboard.html"});
+      res.json({ message: 'Login successful', redirect: "/walker-dashboard.html" });
     }
 
 
@@ -117,6 +117,7 @@ router.post('/login', async (req, res) => {
     // console.log(error);
     res.status(500).json({ error: 'Login failed' });
   }
+  return 0;
 });
 
 module.exports = router;
