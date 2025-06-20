@@ -10,7 +10,7 @@ router.get('/dogs', async function(req, res, next) {
       dog_id,
       name,
       size,
-      (SELECT user_id FROM Users WHERE Users.user_id = Dogs.owner_id) AS owner_username
+      (SELECT user_id FROM Users WHERE Users.user_id = Dogs.owner_id) AS owner_id
       FROM Dogs;`);
     res.json(rows[0]);
   } catch (err){
