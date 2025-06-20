@@ -87,7 +87,9 @@
 
           }
         },
-        
+        async getDogs(){
+          rspfetch("/api/users/dogs")
+        }
       }
     }).mount('#app');
   </script>
