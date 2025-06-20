@@ -153,12 +153,11 @@
         },
         async getDogs(){
           temp = await fetch("/api/users/myDogs")
-          console.log(temp);
+          console.log(await temp.json());
         }
 
       },
       async mounted(){
-        console.log("test")
         await this.getDogs();
       }
     }).mount('#app');
