@@ -130,6 +130,7 @@
           rsp = await rsp.json();
           console.log(rsp);
           this.dogs = rsp;
+          getDogPhotos(rsp.length());
         }
       }
     }).mount('#app');
