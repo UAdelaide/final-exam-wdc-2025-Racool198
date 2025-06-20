@@ -17,7 +17,7 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', async function(req, res, next) {
-  const rows = await db.execute("SELECT name,size,(SELECT ) FROM Dogs;");
+  const rows = await db.execute("SELECT name,size,(SELECT d.name,d.size,u.username) FROM Dogs;");
   console.log(rows);
 });
 
