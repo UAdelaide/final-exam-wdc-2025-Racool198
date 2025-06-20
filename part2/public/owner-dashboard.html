@@ -79,6 +79,9 @@
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
+      onMounted(){
+                  getDogs();
+      }
       data() {
         return {
           dogs: []
@@ -133,7 +136,6 @@
 
         onMounted(() => {
           loadWalks();
-          getDogs();
         });
 
         return {
