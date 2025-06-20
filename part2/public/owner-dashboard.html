@@ -158,6 +158,7 @@
           });
           window.location.href = "/";
         },
+        // gets an array containing all the dogs that belong to current user
         async getDogs(){
           temp = await fetch("/api/users/myDogs")
           // console.log(await temp.json());
