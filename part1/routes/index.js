@@ -37,7 +37,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 router.get('/api/walkers/summary', async function(req, res, next) {
   const rows = await db.execute(`SELECT
     U.username as walker_username,
-    COUNT()
+    COUNT(WalkerRatings)
     FROM Users;
     WHERE Users.role = "walker";`);
   res.json(rows[0]);
