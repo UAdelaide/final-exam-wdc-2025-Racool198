@@ -76,6 +76,6 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 VALUES
 (
     (
-        
+        SELECT d.dog_id FROM Dogs d JOIN Users u on d.owner_id = u.user
     )
 )
