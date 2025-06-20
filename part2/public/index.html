@@ -90,7 +90,7 @@
       },
       // handleLogin sends a post request to authenticate the user
       methods: {
-        //gets a dog photo for the amount of dogs in 
+        //gets a dog photo url for each dog
         async getDogPhotos(count) {
           for (let index = 0; index < count; index++) {
             fetch("https://dog.ceo/api/breeds/image/random")
@@ -102,6 +102,7 @@
           }
 
         },
+        // recreating the 
         getShading(index) {
           if (index % 2 == 0)
             return {"background-color": "#F1F1F1"}
