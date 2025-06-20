@@ -17,7 +17,9 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', function(req, res, next) {
-  db.get("SELECT")
+  db.get("SELECT * FROM Dogs;", () => {
+
+  })
 });
 
 
