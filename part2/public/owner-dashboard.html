@@ -31,7 +31,7 @@
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
             <select v-model="form.dog_id" class="form-control" required>
-              <option v-for="dog in dogs" :key="dog.name"></option>
+              <option v-for="dog in dogs" :key="dog.dog_id" :value=""></option>
             </select>
             <!-- <input v-model="form.dog_id" type="number" class="form-control" required> -->
           </div>
