@@ -17,15 +17,15 @@
     <div>
       <div>
         <label style="display: block;" for="username">Username</label>
-        <input type="text" id="username" name="username" v-modal="username">
+        <input type="text" id="username" name="username" v-model="username">
       </div>
       <br>
       <div>
         <label style="display: block;" for="password">Password</label>
-        <input type="password" id="password" name="password" v-modal="username">
+        <input type="password" id="password" name="password" v-model="password">
       </div>
       <br>
-      <button type="button" style="background-color: #0F6EFC; color: white; border-radius: 5px; padding: 8px; border: 0px;">Log In</button>
+      <button @clicktype="button" style="background-color: #0F6EFC; color: white; border-radius: 5px; padding: 8px; border: 0px;">Log In</button>
     </div>
     <!-- Ends here -->
 
