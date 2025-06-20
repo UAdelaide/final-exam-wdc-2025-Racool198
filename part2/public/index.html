@@ -81,7 +81,7 @@
               redirect: "manual"
             })
             // .then(rsp => rsp.json())
-            .then(rsp => {
+            .then(async (rsp) => {
               console.log(rsp)
               console.log(await rsp.json())
             })
