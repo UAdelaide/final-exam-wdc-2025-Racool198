@@ -25,7 +25,7 @@
         <input type="password" id="password" name="password" v-model="password">
       </div>
       <br>
-      <button @clicktype="button" style="background-color: #0F6EFC; color: white; border-radius: 5px; padding: 8px; border: 0px;">Log In</button>
+      <button @click="handleLogin" type="button" style="background-color: #0F6EFC; color: white; border-radius: 5px; padding: 8px; border: 0px;">Log In</button>
     </div>
     <!-- Ends here -->
 
@@ -51,7 +51,7 @@
       },
       methods: {
         handleLogin(){
-
+          console.log(this.username)
         }
       }
     }).mount('#app');
