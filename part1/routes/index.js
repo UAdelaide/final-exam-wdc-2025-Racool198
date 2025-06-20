@@ -33,6 +33,10 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
   res.json(rows[0]);
 });
 
+router.get('/api/walkers/summary', async function(req, res, next) {
+  const rows = await db.execute(``);
+  res.json(rows[0]);
+});
 
 
 
