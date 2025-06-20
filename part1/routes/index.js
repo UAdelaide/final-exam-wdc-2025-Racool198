@@ -5,7 +5,14 @@ var mysql = require('mysql2/promise');
 
 let db;
 
-(async ())
+(async () => {
+    db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalkService'
+    });
+})();
 
 await mysql.createConnection({
       host: 'localhost',
