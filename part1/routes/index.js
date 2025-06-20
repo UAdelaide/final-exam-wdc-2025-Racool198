@@ -45,7 +45,8 @@ router.get('/api/walkers/summary', async function(req, res, next) {
         SELECT status
         FROM WalkRequests
         WHERE request_id = wr.request_id
-      )
+      ) = "completed" THEN wr.request_id
+       else NULL
     )
     FROM Users u
     JOIN WalkRatings wr ON u.user_id = wr.walker_id
