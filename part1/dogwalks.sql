@@ -72,7 +72,8 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = "alice123"),"Finn", "medium"),
 ((SELECT user_id FROM Users WHERE username = "carol123"),"Cat", "small");
 
-INSERT INTO WalkRequests (dog_id, requested_tim, duration_minutes, location, status, created_at)
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at)
+
 
 
 
