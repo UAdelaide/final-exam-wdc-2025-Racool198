@@ -16,14 +16,8 @@ let db;
 
 
 /* GET home page. */
-router.get('/api/dogs', async function(req, res, next) {
-  db = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'DogWalkService'
-  });
-  db.run("SELECT * FROM Dogs;", (err, row) => {
+router.get('/api/dogs', function(req, res, next) {
+  db.get("SELECT * FROM Dogs;", (err, row) => {
     res.json(row);
   });
 });
