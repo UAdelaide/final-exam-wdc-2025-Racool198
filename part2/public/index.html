@@ -134,7 +134,7 @@
           rsp = await rsp.json();
           console.log(rsp);
           this.dogs = rsp;
-          getDogPhotos(rsp.length());
+          this.getDogPhotos(rsp.length());
         }
       }
     }).mount('#app');
