@@ -6,25 +6,18 @@ var mysql = require('mysql2/promise');
 let db;
 
 (async () => {
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
+  db = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
+  });
 })();
-
-await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
 
 
 /* GET home page. */
 router.get('/api/dogs', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  db.get("SELECT")
 });
 
 
