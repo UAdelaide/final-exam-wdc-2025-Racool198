@@ -43,9 +43,12 @@ router.get('/myDogs', async (req, res) => {
 
     console.log(result);
 
+    res.send("hi");
+
 
   } catch (err) {
     console.log("error");
+    res.send("hi");
   }
 });
 
