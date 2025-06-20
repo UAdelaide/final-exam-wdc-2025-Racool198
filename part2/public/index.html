@@ -83,7 +83,7 @@
             // .then(rsp => rsp.json())
             .then(rsp => {
               console.log(rsp)
-              console.log(rsp.json())
+              console.log(await rsp.json())
             })
           } catch (err){
 
