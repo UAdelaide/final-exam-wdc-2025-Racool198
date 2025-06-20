@@ -37,16 +37,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 router.get('/api/walkers/summary', async function(req, res, next) {
   var rows = await db.execute(`
     SELECT
-    username
-    FROM Users
-    WHERE Users.role = "walker"
-    ;`);
-  console.log(rows[0]);
-  rows = await db.execute(`
-    SELECT
-    COUNT(ratings)
-    FROM WalkRatings
-    WHERE  = "walker"
+    
     ;`);
   console.log(rows[0]);
 
