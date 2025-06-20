@@ -57,6 +57,7 @@
         //set user to -1 so that any issues can be diagnosed easier
         var user = -1;
 
+        // create function to get /api/users/me and return the user_id
         async function getCurrentUser() {
           rsp = await fetch("/api/users/me");
           rsp = (await rsp.json())
@@ -72,6 +73,9 @@
             error.value = err.message;
           }
         }
+
+
+        // fix the user value inside of applyToWalk before it is ever used anywhere
 
         async function applyToWalk(requestId) {
 
