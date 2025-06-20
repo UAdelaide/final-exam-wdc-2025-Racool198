@@ -58,7 +58,8 @@
 
         async function getCurrentUser() {
           rsp = await fetch("/api/users/me");
-          console.log(await rsp.json())
+          rsp = (await rsp.json())
+          return rsp
         }
 
         async function loadWalkRequests() {
@@ -73,6 +74,7 @@
 
         async function applyToWalk(requestId) {
           console.log(requestId)
+          requestId = this.getCurrentUser()
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
