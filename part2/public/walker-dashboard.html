@@ -100,11 +100,11 @@
       methods: {
         // the logout function just removes the two elements from local storage and redirects back to the index.html main page
         async handleLogout(){
-          localStorage.removeItem("role");
-          localStorage.removeItem("loggedIn");
-          localStorage.removeItem("user_id");
+          await fetch("/api/users/logout", {
+            method: "POST"
+          });
           window.location.href = "/";
-        }
+        },
       }
     }).mount('#app');
   </script>
