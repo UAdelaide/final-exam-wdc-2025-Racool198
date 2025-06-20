@@ -42,6 +42,9 @@ router.get('/api/walkers/summary', async function(req, res, next) {
     AVG(wr.rating) AS average_rating,
     COUNT(
       CASE WHEN (
+        SELECT status
+        FROM WalkRequests
+        WHERE request_id = wr.request_id
       )
     )
     FROM Users u
