@@ -73,6 +73,7 @@
   <script>
     const { createApp } = Vue;
     createApp({
+      // gets dogs on load
       async mounted() {
         await this.getDogs();
       },
