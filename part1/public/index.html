@@ -6,16 +6,6 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", ()=>{
-            fetch("https://dog.ceo/dog-api/documentation/random")
-                        .then(rsp => rsp.json)
-                        .then(rsp => {
-                            console.log(rsp)
-                        })
-        })
-    </script>
-
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +23,7 @@
             methods: {
                 async fetchDogImage() {
                     try {
-                        fetch("https://dog.ceo/dog-api/documentation/random")
+                        fetch("https://dog.ceo/api/breeds/image/random")
                         .then(rsp => rsp.json)
                         .then(rsp => {
                             console.log(rsp)
