@@ -62,6 +62,8 @@
         const error = ref('');
         const user = 3;
 
+        async function getCurrentUser
+
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
@@ -93,7 +95,7 @@
 
         onMounted(() => {
           loadWalkRequests();
-          getCurrentUser()
+          getCurrentUser();
         });
 
         return {
