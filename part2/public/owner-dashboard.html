@@ -79,10 +79,6 @@
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
-      mounted(){
-        console.log("test")
-        getDogs();
-      },
       data() {
         return {
           dogs: []
@@ -160,6 +156,10 @@
           console.log(temp);
         }
 
+      },
+      mounted(){
+        console.log("test")
+        getDogs();
       }
     }).mount('#app');
   </script>
