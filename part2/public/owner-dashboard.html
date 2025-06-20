@@ -148,7 +148,7 @@
           window.location.href = "/";
         },
         async getDogs(){
-          user_id = localStorage.getItem("user_id");
+          dogs = fetch("/api/users/myDogs")
         }
 
       }
