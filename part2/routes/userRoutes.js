@@ -37,7 +37,13 @@ router.get('/me', (req, res) => {
 
 router.get('/myDogs', (req, res) => {
   try {
-    u_id = req.session.user_id;
+    var user_id = req.session.user_id;
+
+        const [result] = await db.query(`
+      INSERT INTO Users (username, email, password_hash, role)
+      VALUES (?, ?, ?, ?)
+    `, [username, email, password, role]);
+
 
   } catch (err) {
     console.log("error");
