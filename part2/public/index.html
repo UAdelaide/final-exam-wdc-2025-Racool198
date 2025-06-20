@@ -71,9 +71,8 @@
             // .then(rsp => rsp.json())
             .then(async (rsp) => {
               response = await rsp.json()
-              if (response["redirect"] != "undefined"){
+              if (response["redirect"] != undefined){
                 window.location.href = response["redirect"]
-
               }
             })
           } catch (err){
