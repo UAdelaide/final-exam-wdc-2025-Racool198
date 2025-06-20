@@ -47,12 +47,6 @@
 
   <script>
 
-    document.addEventListener("DOMContentLoaded", async ()=>{
-      rsp = await fetch("/api/users/me");
-      console.log(await rsp.json())
-    })
-
-
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
@@ -63,7 +57,7 @@
         const user = 3;
 
         async function getCurrentUser() {
-          
+
         }
 
         async function loadWalkRequests() {
