@@ -36,8 +36,8 @@ router.get('/me', (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  req.session.user_id = -1;
-  req.session.role = "";
+
+  req.session.destroy();
   console.log("Logged out");
   res.send("Logged out");
 });
