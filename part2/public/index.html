@@ -58,10 +58,10 @@
       </thead>
       <tbody>
         <tr v-for="(dog, index) in dogs" :key="dog.dog_id" :style="getShading(index)">
-          <td style="">{{dog.dog_id}}</td>
-          <td>{{dog.name}}</td>
-          <td>{{dog.size}}</td>
-          <td>{{dog.owner_id}}</td>
+          <td style="vertical-align: top;">{{dog.dog_id}}</td>
+          <td style="vertical-align: top;">{{dog.name}}</td>
+          <td style="vertical-align: top;">{{dog.size}}</td>
+          <td style="vertical-align: top;">{{dog.owner_id}}</td>
           <td><img style="height: 120px; padding: 5px;" :src="dogPhotos[index]"></td>
         </tr>
       </tbody>
