@@ -35,7 +35,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user_id);
 });
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   req.session.user_id = -1;
   req.session.role = "";
   console.log("Logged out");
