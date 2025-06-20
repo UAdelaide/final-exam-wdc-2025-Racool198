@@ -51,7 +51,11 @@
       },
       methods: {
         async handleLogin(){
-          var role = await fetch("/api/users/login", {
+          var role
+          try{
+
+          }
+           = await fetch("/api/users/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
