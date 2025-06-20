@@ -39,10 +39,7 @@ router.get('/myDogs', async (req, res) => {
   try {
     var user_id = req.session.user_id;
 
-    const [result] = await db.query(`
-    INSERT INTO Users (username, email, password_hash, role)
-    VALUES (?, ?, ?, ?)
-    `, [username, email, password, role]);
+    const [result] = await db.query(`SELECT `, [username, email, password, role]);
 
 
   } catch (err) {
