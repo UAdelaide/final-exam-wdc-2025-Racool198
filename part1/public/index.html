@@ -23,7 +23,9 @@
                     try {
                         fetch("https://dog.ceo/dog-api/documentation/random")
                         .then(rsp => rsp.json)
-                        .then(rsp => )
+                        .then(rsp => {
+                            console.log(rsp)
+                        })
                     }
                 }
             }
