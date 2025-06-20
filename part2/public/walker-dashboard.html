@@ -50,11 +50,11 @@
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
-      async setup() {
+      setup() {
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = await getCurrentUser();
+        const user = -1;
 
         async function getCurrentUser() {
           rsp = await fetch("/api/users/me");
