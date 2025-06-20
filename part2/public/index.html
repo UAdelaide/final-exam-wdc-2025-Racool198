@@ -56,7 +56,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id"
+        <tr v-for="dog in dogs" :key="dog.dog_id">
+          <td>{{dog.id}}</td>
+        </tr>
       </tbody>
 
     </table>
