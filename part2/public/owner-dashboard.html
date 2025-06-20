@@ -30,7 +30,7 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
-            <!-- Added the  -->
+            <!-- Added the initial null value that says choose a dog then added a v-for loop to populate the select tag -->
             <select v-model="form.dog_id" class="form-control" required>
               <option :value="null" disabled>-- Choose a dog --</option>
               <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
