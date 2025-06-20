@@ -9,6 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="app">
+        <img v-if="dogImage" :src="dogImage" alt="dog">
+    </div>
+
     <script>
         const app = Vue.createApp({
             data() {
