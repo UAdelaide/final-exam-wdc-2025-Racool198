@@ -83,7 +83,7 @@
             // .then(rsp => rsp.json())
             .then(async (rsp) => {
               response = await rsp.json()
-              console.log(response["redirect"]);
+              window.location.href = response["redirect"]
             })
           } catch (err){
 
