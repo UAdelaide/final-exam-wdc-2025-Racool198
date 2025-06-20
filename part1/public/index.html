@@ -24,7 +24,7 @@
                 async fetchDogImage() {
                     try {
                         fetch("https://dog.ceo/api/breeds/image/random")
-                        .then(rsp => {
+                        .then(rsp => async {
                             console.log(rsp.json())
                         })
                     } catch (err) {
