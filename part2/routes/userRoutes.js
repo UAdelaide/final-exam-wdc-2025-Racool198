@@ -35,6 +35,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user_id);
 });
 
+// just deletes the session data
 router.post('/logout', (req, res) => {
 
   req.session.destroy();
@@ -44,7 +45,7 @@ router.post('/logout', (req, res) => {
 
 
 // POST login (dummy version)
-// Minor modification made to the login router to change email field to username
+// Minor modification made to the login router to change email field to username and store role and user_id in the session and send the appropriate redirect based on role.
 router.post('/login', async (req, res) => {
   // const data = req.body;
   const username = req.body.username;
