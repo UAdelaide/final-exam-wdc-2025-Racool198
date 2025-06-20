@@ -82,13 +82,15 @@
           message: 'Welcome to the Dog Walking Service!',
           username: "",
           password: "",
-          dogs: [],
           role: "",
+          // array to hold dog details as well as photos
+          dogs: [],
           dogPhotos: []
         };
       },
       // handleLogin sends a post request to authenticate the user
       methods: {
+        //gets a dog photo for the amount of dogs in 
         async getDogPhotos(count) {
           for (let index = 0; index < count; index++) {
             fetch("https://dog.ceo/api/breeds/image/random")
