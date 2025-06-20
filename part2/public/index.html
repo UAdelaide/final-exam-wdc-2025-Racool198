@@ -85,7 +85,9 @@
       },
       // handleLogin sends a post request to authenticate the user
       methods: {
-        get
+        getShading(index) {
+          if (index % 2 == 0)
+        },
         async handleLogin(){
           try{
             await fetch("/api/users/login", {
