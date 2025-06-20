@@ -43,7 +43,7 @@
   </div>
 
   <script>
-
+  <!-- Next addition, to <script>, this makes sure that if im logged in already, ill be automatically redirected to the correct dashboard -->
     document.addEventListener("DOMContentLoaded", ()=>{
       if (localStorage.getItem("loggedIn")){
         if (localStorage.getItem("role") == "owner") {
