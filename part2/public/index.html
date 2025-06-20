@@ -133,6 +133,7 @@
 
           }
         },
+        // gets the dog details
         async getDogs(){
           rsp = await fetch("/api/users/dogs");
           rsp = await rsp.json();
