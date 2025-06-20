@@ -45,6 +45,14 @@
   </div>
 
   <script>
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      if (!localStorage.getItem("loggedIn") || (localStorage.getItem("role") == "owner")){
+        window.location.href = "/";
+      }
+    })
+
+
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
