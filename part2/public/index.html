@@ -68,7 +68,7 @@
       // added methods to the vue CreateApp, the handleLogin method fetches the /api/users/login route and then redirects to the correct dashboard after setting localstorage values loggedIn and role.
       methods: {
         async handleLogin(){
-          var role;
+          var response;
           try{
             role = await fetch("/api/users/login", {
               method: "POST",
@@ -91,6 +91,7 @@
           if(role["role"]){
             // this.loggedIn = true;
             localStorage.setItem("loggedIn", true);
+            localStorage.setItem(role["user_id"], true);
 
             if (role["role"] == "owner") {
               localStorage.setItem("role", "owner");
