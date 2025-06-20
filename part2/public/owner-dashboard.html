@@ -151,7 +151,7 @@
         };
       },
       methods: {
-	// does the logout and the redirect
+	      // does the logout and the redirect
         async handleLogout(){
           await fetch("/api/users/logout", {
             method: "POST"
@@ -165,6 +165,7 @@
         }
 
       },
+      // gets list of dogs on page load
       async mounted(){
         await this.getDogs();
       }
