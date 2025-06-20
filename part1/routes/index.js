@@ -38,10 +38,10 @@ router.get('/api/walkers/summary', async function(req, res, next) {
   var rows = await db.execute(`
     SELECT
     u.username AS walker_username,
-    COUNT(wrt.rating) AS total_ratings,
-    AVG(wrt.rating) AS average_rating
+    COUNT(wr.rating) AS total_ratings,
+    AVG(wr.rating) AS average_rating
     FROM Users u
-    JOIN WalkRatings
+    JOIN WalkRatings wr ON u.user_id = wr.walked_id
     ;`);
   console.log(rows[0]);
 
