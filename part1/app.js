@@ -68,6 +68,32 @@ let db;
     `);
 
 
+    await db.execute(`
+      INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+      VALUES
+      (
+          (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Jake")),
+          (SELECT user_id FROM Users WHERE username = "bobwalker"),
+          (SELECT user_id FROM Users WHERE username = "adamowner"),
+          5,
+          "Dog walked"
+      ),
+      (
+          (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Finn")),
+          (SELECT user_id FROM Users WHERE username = "bobwalker"),
+          (SELECT user_id FROM Users WHERE username = "alice123"),
+          3,
+          "Dog walked"
+      ),
+      (
+          (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Max")),
+          (SELECT user_id FROM Users WHERE username = "bobwalker"),
+          (SELECT user_id FROM Users WHERE username = "alice123"),
+          5,
+          "Dog walked"
+    );`);
+
+
   } catch (err) {
     console.log('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
