@@ -21,7 +21,8 @@ router.get('/api/dogs', async function(req, res, next) {
     SELECT
       name,
       size,
-      (SELECT username FROM Users WHERE Users.id = Dogs.)
+      (SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id)
+      
   ```);
   console.log(rows);
 });
