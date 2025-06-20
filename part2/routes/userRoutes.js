@@ -58,7 +58,9 @@ router.post('/login', async (req, res) => {
     req.session.role = rows[0].role;
     req.session.user_id = rows[0].user_id;
 
-    res.json({ message: 'Login successful', user: rows[0] });
+    res.redirect()
+
+    // res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: 'Login failed' });
