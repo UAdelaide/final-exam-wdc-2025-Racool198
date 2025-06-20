@@ -5,14 +5,14 @@ var mysql = require('mysql2/promise');
 
 let db;
 
-// (async () => {
-//   db = await mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '',
-//     database: 'DogWalkService'
-//   });
-// })();
+(async () => {
+  db = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
+  });
+})();
 
 
 /* GET home page. */
