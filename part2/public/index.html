@@ -88,7 +88,7 @@
       },
       // handleLogin sends a post request to authenticate the user
       methods: {
-        async getDogPhoto() {
+        async getDogPhotos() {
           fetch("https://dog.ceo/api/breeds/image/random")
           .then(async (rsp) => {
               rsp = await rsp.json()
