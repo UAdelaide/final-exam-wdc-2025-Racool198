@@ -17,9 +17,7 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', async function(req, res, next) {
-  await db.execute("SELECT * FROM Dogs;", (err, row) => {
-    res.json(row);
-  });
+  const [await db.execute("SELECT * FROM Dogs;");
 });
 
 
