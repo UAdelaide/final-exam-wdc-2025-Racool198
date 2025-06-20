@@ -64,4 +64,11 @@ VALUES
 
 
 
-INSERT INTO Dogs ()
+INSERT INTO Dogs (owner_id, name, size)
+
+
+    dog_id INT AUTO_INCREMENT PRIMARY KEY,
+    owner_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    size ENUM('small', 'medium', 'large') NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES Users(user_id)
