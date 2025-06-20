@@ -49,7 +49,7 @@
 
     document.addEventListener("DOMContentLoaded", async ()=>{
       rsp = await fetch("/api/users/me");
-      console.log(rsp)
+      console.log(rsp.json())
     })
 
 
