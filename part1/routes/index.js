@@ -22,7 +22,8 @@ router.get('/api/dogs', async function(req, res, next) {
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next) {
-  const rows = await db.execute(`SELECT request_id,
+  const rows = await db.execute(`SELECT
+    request_id,
     (SELECT name FROM Dogs WHERE Dogs.dog_id = WalkRequests.dog_id) as dog_name,
     requested_time,
     duration_minutes,
@@ -34,7 +35,7 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 });
 
 router.get('/api/walkers/summary', async function(req, res, next) {
-  const rows = await db.execute(``);
+  const rows = await db.execute(`SELECT`);
   res.json(rows[0]);
 });
 
