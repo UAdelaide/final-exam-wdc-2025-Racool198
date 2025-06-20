@@ -32,13 +32,13 @@
             mounted() {
                 this.fetchDogImage();
             }
-        })
+        });
+
+        app.mount("#app")
     </script>
 
 
 
-    <div id="app">
-        <img v-if="dogImage" :src="dogImage" alt="dog">
-    </div>
+
 </body>
 </html>
