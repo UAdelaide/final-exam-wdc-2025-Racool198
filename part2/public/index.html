@@ -89,7 +89,9 @@
         },
         async getDogs(){
           rsp = await fetch("/api/users/dogs");
-
+          rsp = await rsp.json();
+          console.log(rsp);
+          this.dogs = rsp;
         }
       }
     }).mount('#app');
