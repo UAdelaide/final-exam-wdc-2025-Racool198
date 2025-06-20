@@ -35,6 +35,12 @@ router.get('/me', (req, res) => {
   res.json(req.session.user_id);
 });
 
+router.get('/logout', (req, res) => {
+  req.session.user_id = N
+  res.json(req.session.user_id);
+});
+
+
 // POST login (dummy version)
 // Minor modification made to the login router to change email field to username
 router.post('/login', async (req, res) => {
