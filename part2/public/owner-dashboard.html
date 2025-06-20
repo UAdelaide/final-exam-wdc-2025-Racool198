@@ -76,7 +76,7 @@
 
   <script>
 
-// Code to make sure that 
+// Code to make sure that a user of the opposite role doesnt manually navigate to the wrong 
     document.addEventListener("DOMContentLoaded", ()=>{
       if (!localStorage.getItem("loggedIn") || (localStorage.getItem("role") == "walker")){
         window.location.href = "/";
