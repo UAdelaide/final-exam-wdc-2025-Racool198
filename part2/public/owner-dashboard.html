@@ -157,9 +157,9 @@
         }
 
       },
-      mounted(){
+      async mounted(){
         console.log("test")
-        getDogs();
+        await getDogs();
       }
     }).mount('#app');
   </script>
