@@ -28,7 +28,11 @@ app.use('/users', usersRouter);
 let db;
 
 (async () => {
-  
+  try {
+
+  } catch ({
+
+  }
 })
 
 // catch 404 and forward to error handler
