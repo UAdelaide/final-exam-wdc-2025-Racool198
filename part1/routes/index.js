@@ -18,7 +18,7 @@ let db;
 /* GET home page. */
 router.get('/api/dogs', async function(req, res, next) {
   const rows = await db.execute("SELECT name,size,(SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id) AS username FROM Dogs;");
-  console.log(rows);
+  res.json(rows);
 });
 
 
