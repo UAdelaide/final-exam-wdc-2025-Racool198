@@ -62,7 +62,7 @@
           <td>{{dog.name}}</td>
           <td>{{dog.size}}</td>
           <td>{{dog.owner_id}}</td>
-          <td>{{await getDogPhoto()}}</td>
+          <td>{{dogPhotos}}</td>
         </tr>
       </tbody>
 
@@ -82,8 +82,8 @@
           username: "",
           password: "",
           dogs: [],
-          role: ""
-          
+          role: "",
+          dogPhotos: []
         };
       },
       // handleLogin sends a post request to authenticate the user
