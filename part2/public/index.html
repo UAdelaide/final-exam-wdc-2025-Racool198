@@ -42,8 +42,6 @@
   <script>
 
     document.addEventListener("DOMContentLoaded", ()=>{
-      console.log(localStorage.getItem("role"))
-      console.log(localStorage.getItem("loggedIn"))
       if (localStorage.getItem("loggedIn")){
         if (localStorage.getItem("role") == "owner") {
           window.location.href = "/owner-dashboard.html";
@@ -51,7 +49,6 @@
           window.location.href = "/walker-dashboard.html";
         }
       }
-
     })
 
     const { createApp } = Vue;
