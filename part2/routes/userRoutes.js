@@ -35,13 +35,13 @@ router.get('/me', (req, res) => {
   res.json(req.session.user_id);
 });
 
-router.get('/myDogs', (req, res) => {
+router.get('/myDogs', async (req, res) => {
   try {
     var user_id = req.session.user_id;
 
-        const [result] = await db.query(`
-      INSERT INTO Users (username, email, password_hash, role)
-      VALUES (?, ?, ?, ?)
+    const [result] = await db.query(`
+    INSERT INTO Users (username, email, password_hash, role)
+    VALUES (?, ?, ?, ?)
     `, [username, email, password, role]);
 
 
