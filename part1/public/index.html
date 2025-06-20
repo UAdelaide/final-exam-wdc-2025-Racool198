@@ -27,7 +27,7 @@
                         .then(async (rsp) => {
                             rsp = await rsp.json()
                             // console.log(rsp["message"])
-                            
+                            this.dogImage = rsp["message"]
                         })
                     } catch (err) {
                         console.log(err)
