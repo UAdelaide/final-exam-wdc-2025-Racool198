@@ -141,7 +141,9 @@
       methods: {
         // the logout function just removes the two elements from local storage and redirects back to the index.html main page
         async handleLogout(){
-          await fetch("/api/users/logout");
+          await fetch("/api/users/logout", {
+            method: "POST"
+          });
           window.location.href = "/";
         },
         async getDogs(){
