@@ -62,8 +62,6 @@ VALUES
 ("adamowner", "adam@example.com", "adam123", "owner"),
 ("billwalker", "bill@example.com", "bill321", "walker");
 
-
-
 INSERT INTO Dogs (owner_id, name, size)
 VALUES
 ((SELECT user_id FROM Users WHERE username = "alice123"),"Max", "medium"),
