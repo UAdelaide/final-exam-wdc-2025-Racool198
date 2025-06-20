@@ -70,7 +70,7 @@ let db;
     await db.execute(`
       INSERT INTO WalkRatings (rating, comments)
       VALUES
-      (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Bella")), (SELECT user_id FROM Users WHERE username = "bobwalker"), (SELECT)
+      (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Bella")), (SELECT user_id FROM Users WHERE username = "bobwalker"), (SELECT user_id FROM Users WHERE username = "carol123"), 5, "walked with bella")
     `);
 
 
