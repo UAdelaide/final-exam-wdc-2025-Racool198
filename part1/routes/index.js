@@ -17,13 +17,14 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', async function(req, res, next) {
-  const rows = await db.execute(```
+  const rows = await db.execute("
     SELECT
       name,
       size,
       (SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id)
-      
-  ```);
+    FROM
+      Dogs;
+  ");
   console.log(rows);
 });
 
