@@ -54,7 +54,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = getCurrentUser;
+        const user = getCurrentUser();
 
         async function getCurrentUser() {
           rsp = await fetch("/api/users/me");
@@ -73,7 +73,7 @@
         }
 
         async function applyToWalk(requestId) {
-          user = await getCurrentUser()
+          // user = await getCurrentUser()
           console.log(requestId)
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
