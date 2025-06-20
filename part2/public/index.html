@@ -82,8 +82,8 @@
             })
             // .then(rsp => rsp.json())
             .then(async (rsp) => {
-              console.log(rsp)
-              console.log(await rsp.json())
+              // console.log(rsp)
+              console.log(await rsp.json()["redirect"])
             })
           } catch (err){
 
