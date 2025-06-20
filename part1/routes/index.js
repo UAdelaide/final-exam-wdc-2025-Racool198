@@ -35,11 +35,11 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 });
 
 router.get('/api/walkers/summary', async function(req, res, next) {
-  const rows = await db.execute(`
-    SELECT username
+  const rows = await db.execute(`SELECT
+    username
+    FROM Users
     WHERE Users.role = "walker"
-    AS walker_username
-    FROM Users;`);
+    ;`);
   res.json(rows[0]);
 });
 
