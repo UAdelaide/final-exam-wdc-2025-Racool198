@@ -25,7 +25,7 @@
                     try {
                         fetch("https://dog.ceo/api/breeds/image/random")
                         .then(rsp => {
-                            console.log(rsp)
+                            console.log(rsp.json())
                         })
                     } catch (err) {
                         console.log(err)
