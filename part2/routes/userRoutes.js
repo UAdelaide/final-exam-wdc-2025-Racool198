@@ -35,6 +35,8 @@ router.get('/me', (req, res) => {
   res.json(req.session.user_id);
 });
 
+
+// route to return the dogs that belong to the current session user
 router.get('/myDogs', async (req, res) => {
   try {
     var user_id = req.session.user_id;
