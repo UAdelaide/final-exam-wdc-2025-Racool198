@@ -52,8 +52,9 @@
       },
       methods: {
         async handleLogin(){
+          var role;
           try{
-            fetch("/api/users/login", {
+            role = await fetch("/api/users/login", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -63,8 +64,23 @@
                 password: this.password
               })
             })
+            .then(rsp => rsp.json())
+            .then(rsp => {
+              return (rsp["user"]["role"])
+            })
           } catch (err){
 
+          }
+
+          if(role){
+            this.loggedIn = true;
+            if (role == "owner") {
+
+            } else if (role == "walker") {
+
+            }
+          } else {
+            console.log("login failed")
           }
 
         }
