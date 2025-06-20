@@ -36,7 +36,8 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.session.user_id = N
+  req.session.user_id = -1;
+  req.session.role = "";
   res.json(req.session.user_id);
 });
 
