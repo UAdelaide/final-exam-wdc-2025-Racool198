@@ -79,7 +79,7 @@ let db;
 
 
   } catch (err) {
-    // console.log('Error setting up database. Ensure Mysql is running: service mysql start', err);
+    console.log('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
 })();
 
