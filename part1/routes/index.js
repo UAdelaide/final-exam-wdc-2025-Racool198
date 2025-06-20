@@ -20,9 +20,9 @@ router.get('/api/dogs', async function(req, res, next) {
   try {
     const rows = await db.execute("SELECT name AS dog_name,size,(SELECT username FROM Users WHERE Users.user_id = Dogs.owner_id) AS owner_username FROM Dogs;");
     res.json(rows[0]);
-  } catch {
-    res.status()
-    res.send("")
+  } catch (err){
+    res.status(404)
+    res.send("Error Occured")
   }
 
 });
