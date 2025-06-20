@@ -95,7 +95,11 @@
         };
       },
       methods: {
-
+        async handleLogout(){
+          localStorage.removeItem("role");
+          localStorage.removeItem("loggedIn");
+          window.location.href = "/";
+        }
       }
     }).mount('#app');
   </script>
