@@ -53,6 +53,8 @@ router.post('/login', async (req, res) => {
     }
 
     if (rows[0]["role"] == "owner") {
+      res.redirect("/")
+    } else if (rows[0]["role"] == "walker") {
 
     }
 
