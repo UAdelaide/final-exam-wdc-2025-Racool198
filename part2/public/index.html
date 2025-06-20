@@ -47,7 +47,7 @@
           message: 'Welcome to the Dog Walking Service!',
           username: "",
           password: "",
-          loggedIn: false,
+          // loggedIn: false,
           role: ""
         };
       },
@@ -74,13 +74,13 @@
           }
 
           if(role){
-            this.loggedIn = true;
+            // this.loggedIn = true;
             localStorage.setItem("loggedIn", true);
             if (role == "owner") {
               localStorage.setItem("role", "owner");
               window.location.href = "/owner-dashboard.html";
             } else if (role == "walker") {
-              localStorage.setItem("role", "");
+              localStorage.setItem("role", "walker");
               window.location.href = "/walker-dashboard.html";
             }
           } else {
