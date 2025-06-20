@@ -91,7 +91,7 @@
           if(response["role"]){
             // this.loggedIn = true;
             localStorage.setItem("loggedIn", true);
-            localStorage.setItem("user_id", role["user_id"]);
+            localStorage.setItem("user_id", response["user_id"]);
 
             if (response["role"] == "owner") {
               localStorage.setItem("role", "owner");
