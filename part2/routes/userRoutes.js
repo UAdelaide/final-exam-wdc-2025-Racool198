@@ -52,9 +52,9 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    if (rows[0]["role"] == "owner") {
+    if (rows[0]["role"] === "owner") {
       res.redirect("/owner-dashboard.html");
-    } else if (rows[0]["role"] == "walker") {
+    } else if (rows[0]["role"] === "walker") {
       res.redirect("/walker-dashboard.html");
     }
 
