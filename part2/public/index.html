@@ -65,6 +65,7 @@
           role: ""
         };
       },
+      // added methods to the vue CreateApp, the handleLogin method fetches the /api/users/login route and then redirects to the correct dashboard after setting localstorage values loggedIn and role.
       methods: {
         async handleLogin(){
           var role;
