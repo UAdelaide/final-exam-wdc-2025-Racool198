@@ -61,6 +61,7 @@
               password: this.password
             })
           })
+          .then(rsp => rsp.json())
           .then(rsp => {
             console.log(rsp)
           })
