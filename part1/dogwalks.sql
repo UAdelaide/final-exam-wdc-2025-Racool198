@@ -70,4 +70,6 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = "carol123"),"Bella", "small"),
 ((SELECT user_id FROM Users WHERE username = "adamowner"),"Jake", "medium"),
 ((SELECT user_id FROM Users WHERE username = "alice123"),"Finn", "medium"),
-((SELECT user_id FROM Users WHERE username = "carol123"),"Doggy", "smal;l"),
+((SELECT user_id FROM Users WHERE username = "carol123"),"Cat", "small");
+
+INSERT INTO 
