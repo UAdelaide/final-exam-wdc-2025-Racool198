@@ -82,14 +82,13 @@
             })
             .then(rsp => rsp.json())
             .then(rsp => {
-              console.log(rsp["user"])
-              return (rsp["user"]["role"])
+              return (rsp["user"])
             })
           } catch (err){
 
           }
 
-          if(role){
+          if(role[""]){
             // this.loggedIn = true;
             localStorage.setItem("loggedIn", true);
             if (role == "owner") {
