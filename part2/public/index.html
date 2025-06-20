@@ -52,7 +52,10 @@
       methods: {
         handleLogin(){
           fetch("/api/users/login", {
-            method: "POST"
+            method: "POST",
+            body: {
+              email
+            }
           })
         }
       }
