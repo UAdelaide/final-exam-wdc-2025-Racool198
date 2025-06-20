@@ -29,7 +29,6 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/me', (req, res) => {
-  console.log(req.session.user_id);
   if (!req.session.user_id) {
     return res.status(401).json({ error: 'Not logged in' });
   }
@@ -54,8 +53,8 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    console.log(rows[0].role);
-    console.log(rows[0].user_id);
+    // console.log(rows[0].role);
+    // console.log(rows[0].user_id);
     req.session.role = rows[0].role;
     req.session.user_id = rows[0].user_id;
 
