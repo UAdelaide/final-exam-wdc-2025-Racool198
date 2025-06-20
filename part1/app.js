@@ -29,12 +29,12 @@ let db;
 
 (async () => {
   try {
-    const connection = await mysql.createConnection({
-          host: 'localhost',
-          user: 'root',
-          password: '' // Set your MySQL root password
+    db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalkService'
     });
-
 
 
 
