@@ -64,4 +64,4 @@ VALUES
 
 
 
-INSERT INTO Dogs
+INSERT INTO Dogs ()
