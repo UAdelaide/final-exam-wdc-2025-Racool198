@@ -66,6 +66,18 @@ let db;
       ((SELECT dog_id FROM Dogs WHERE name = "Finn"), "2025-06-8 08:00:00", "12", "Klemzig", "completed"),
       ((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
     `);
+
+    await db.execute(`
+      INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+      VALUES
+      ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", "30", "Parklands", "open"),
+      ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", "45", "Beachside Ave", "accepted"),
+      ((SELECT dog_id FROM Dogs WHERE name = "Jake"), "2025-06-9 08:00:00", "30", "Adelaide", "completed"),
+      ((SELECT dog_id FROM Dogs WHERE name = "Finn"), "2025-06-8 08:00:00", "12", "Klemzig", "completed"),
+      ((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
+    `);
+
+
   } catch (err) {
     // console.log('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
