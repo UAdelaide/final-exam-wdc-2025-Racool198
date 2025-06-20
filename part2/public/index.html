@@ -56,7 +56,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id" :style="getShading()">
+        <tr v-for="(dog, index) in dogs" :key="dog.dog_id" :style="getShading(index)">
           <td>{{dog.dog_id}}</td>
           <td>{{dog.name}}</td>
           <td>{{dog.size}}</td>
@@ -85,6 +85,7 @@
       },
       // handleLogin sends a post request to authenticate the user
       methods: {
+        get
         async handleLogin(){
           try{
             await fetch("/api/users/login", {
