@@ -17,7 +17,7 @@ let db;
 
 /* GET home page. */
 router.get('/api/dogs', function(req, res, next) {
-  db.get("SELECT * FROM Dogs;", (err, row) => {
+  db.execute("SELECT * FROM Dogs;", (err, row) => {
     res.json(row);
   });
 });
