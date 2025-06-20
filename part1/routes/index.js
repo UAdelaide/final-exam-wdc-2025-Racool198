@@ -36,7 +36,9 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
 
 router.get('/api/walkers/summary', async function(req, res, next) {
   const rows = await db.execute(`SELECT
-    (SELECT username FROM Users WHERE Users.user_id = WalkRatings.walker_id) as walker_username,
+    username
+    FROM Users;
+    WHERE Users.
     `);
   res.json(rows[0]);
 });
