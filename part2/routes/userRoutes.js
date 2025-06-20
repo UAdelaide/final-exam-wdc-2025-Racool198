@@ -37,9 +37,10 @@ router.get('/me', (req, res) => {
 
 router.get('/myDogs', (req, res) => {
   try {
-    res.json(req.session.user_id);
+    u_id = req.session.user_id;
 
   } catch (err) {
+    console.log("error");
   }
 });
 
