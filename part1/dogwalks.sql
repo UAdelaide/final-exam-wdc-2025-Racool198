@@ -101,6 +101,4 @@ VALUES
     (SELECT user_id FROM Users WHERE username = "alice123"),
     5,
     "Dog walked"
-)
-
-;
+);
