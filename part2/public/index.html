@@ -64,23 +64,8 @@
                 password: this.password
               })
             })
-            .then(rsp => rsp.json())
-            .then(rsp => {
-              return (rsp["user"]["role"])
-            })
           } catch (err){
 
-          }
-
-          if(role){
-            this.loggedIn = true;
-            if (role == "owner") {
-
-            } else if (role == "walker") {
-
-            }
-          } else {
-            console.log("login failed")
           }
 
         }
