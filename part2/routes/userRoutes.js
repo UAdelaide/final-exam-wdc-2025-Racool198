@@ -38,7 +38,7 @@ router.get('/me', (req, res) => {
 router.post('/logout', (req, res) => {
 
   req.session.destroy();
-  console.log("Logged out");
+  // console.log("Logged out");
   res.send("Logged out");
 });
 
@@ -74,7 +74,7 @@ router.post('/login', async (req, res) => {
 
 
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).json({ error: 'Login failed' });
   }
 });
