@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// 
+// Gets all the details for a dog as required by the question
 router.get('/dogs', async function(req, res, next) {
   try {
     const rows = await db.execute(`
