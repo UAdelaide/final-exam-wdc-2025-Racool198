@@ -79,4 +79,6 @@ CREATE TABLE WalkRatings (
 -- ((SELECT dog_id FROM Dogs WHERE name = "Finn"), "2025-06-8 08:00:00", "12", "Klemzig", "completed"),
 -- ((SELECT dog_id FROM Dogs WHERE name = "Cat"), "2025-06-11 08:00:00", "55", "Greenpath", "cancelled");
 
-INSERT INTO WalkRequests (dog_id, requested_time, )
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+VALUES
+((SELECT))
