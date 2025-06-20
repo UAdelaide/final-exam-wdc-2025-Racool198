@@ -82,6 +82,7 @@
             })
             .then(rsp => rsp.json())
             .then(rsp => {
+              console.log(rsp["user"])
               return (rsp["user"]["role"])
             })
           } catch (err){
