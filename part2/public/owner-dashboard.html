@@ -76,10 +76,8 @@
   <script>
 
     document.addEventListener("DOMContentLoaded", ()=>{
-      if (!localStorage.getItem("loggedIn") or (localStorage.getItem("role") == "walker")){
-        if (localStorage.getItem("role") == "walker") {
-          window.location.href = "/owner-dashboard.html";
-        }
+      if (!localStorage.getItem("loggedIn") || (localStorage.getItem("role") == "walker")){
+        window.location.href = "/";
       }
     })
 
