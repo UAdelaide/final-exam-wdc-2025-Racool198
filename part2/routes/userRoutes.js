@@ -32,7 +32,8 @@ router.get('/', async (req, res) => {
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
   const {
-    username, email, password, role} = req.body;
+    username, email, password, role
+  } = req.body;
 
   try {
     const [result] = await db.query(`
@@ -51,6 +52,7 @@ router.get('/me', (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   res.json(req.session.user_id);
+  return 0;
 });
 
 
