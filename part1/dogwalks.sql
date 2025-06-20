@@ -84,7 +84,7 @@ VALUES
 (
     (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = "Jake")),
     (SELECT user_id FROM Users WHERE username = "bobwalker"),
-    (SELECT user_id FROM Users WHERE username = "alice123"),
+    (SELECT user_id FROM Users WHERE username = "adamowner"),
     5,
     "Dog walked"
 ),
