@@ -8,15 +8,7 @@
     src="https://unpkg.com/vue@3/dist/vue.global.js">
 
 
-    dogOfTheDay = ""
-
-
-    function getImg(){
-        fetch("https://dog.ceo/api/breeds/image/random")
-        .then(rsp => {
-            console.log(rsp)
-        })
-    }
+    const app = Vue.createApp()
     </script>
 
     <title>Document</title>
