@@ -36,7 +36,7 @@ router.get('/me', (req, res) => {
 });
 
 // POST login (dummy version)
-// Minor modification made to the login router 
+// Minor modification made to the login router to change email field to username
 router.post('/login', async (req, res) => {
   // const data = req.body;
   const username = req.body.username;
