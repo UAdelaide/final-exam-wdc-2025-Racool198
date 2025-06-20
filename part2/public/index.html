@@ -91,12 +91,12 @@
           if(response["role"]){
             // this.loggedIn = true;
             localStorage.setItem("loggedIn", true);
-            localStorage.setItem(role["user_id"], true);
+            localStorage.setItem("user_id", role["user_id"]);
 
-            if (role["role"] == "owner") {
+            if (response["role"] == "owner") {
               localStorage.setItem("role", "owner");
               // window.location.href = "/owner-dashboard.html";
-            } else if (role["role"] == "walker") {
+            } else if (response["role"] == "walker") {
               localStorage.setItem("role", "walker");
               // window.location.href = "/walker-dashboard.html";
             }
