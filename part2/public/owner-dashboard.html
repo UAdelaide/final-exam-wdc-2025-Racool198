@@ -32,7 +32,7 @@
             <label class="form-label">Dog ID</label>
             <!-- Added the initial null value that says choose a dog then added a v-for loop to populate the select tag -->
             <select v-model="" class="form-control" required>
-              <option selected :value="">-- Choose a dog --</option>
+              <option disabled hidden selected :value="">-- Choose a dog --</option>
               <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
                 {{dog.name}}
               </option>
